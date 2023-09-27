@@ -18,5 +18,12 @@ module Api
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # # create new Thread to start listening to websocket
+    # config.after_initialize do
+    #   Thread.new do
+    #     WebsocketListener.listen
+    #   end
+    # end
   end
 end
