@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shoe_store: one
+  shoe_model: one
+  qty_left: 1
+
+two:
+  shoe_store: two
+  shoe_model: two
+  qty_left: 1
