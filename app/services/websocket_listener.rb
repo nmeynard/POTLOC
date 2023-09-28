@@ -33,6 +33,8 @@ class WebsocketListener
             shoe_model_id: ShoeModel.find_by(:name => evt['model']).id,
             qty_left: evt['inventory']
           )
+          ActionCable.server.broadcast 'ws_events', rails_evt
+          #ActionCable.server.broadcast 'ws_events', evt
         rescue => e
           p e
           #ActiveRecord::Base.clear_active_connections!

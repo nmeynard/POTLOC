@@ -17,6 +17,7 @@ def start_websocket_client
         sleep 10 # Vérifier toutes les 10 secondes, ajustez selon vos besoins
         unless websocket_thread.alive?
           Rails.logger.warn "WebSocket Thread has died. Restarting..."
+          Thread.kill(websocket_thread)
           ActiveRecord::Base.clear_active_connections!
           websocket_thread = start_websocket_client
         end
